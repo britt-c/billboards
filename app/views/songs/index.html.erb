@@ -2,7 +2,10 @@
 
 <% @songs.each do |song| %>
   <p>
-  <%= song.body %>
+     <%= song.title %>
+     <%= song.genre %>
+     <%= song.released_on%>
+     <%= song.rating %>
     -
     <%= link_to("edit", edit_song_path(song.id)) %>
     -
@@ -10,5 +13,5 @@
   </p>
 <% end %>
 
-<nav class="bottomnav"><%= link_to("New_Song", new_song_path)%></nav>
+<nav class="bottomnav"><%= link_to("New_Song", new_song_path) %></nav>
 

@@ -42,7 +42,7 @@ class BillboardsController < ApplicationController
   private
 
   def billboard_params
-  params.require(:billboard).permit(:body)
+  params.require(:billboard).permit(:title, :country)
   end
 
 end

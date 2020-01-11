@@ -2,11 +2,12 @@
 
 <% @billboards.each do |billboard| %>
   <p>
-    <%= billboard.body %>
+  <%= billboard.title %>
+  <%= billboard.country %>
     -
-    <%= link_to("edit", edit_billboard_path(song.id)) %>
+    <%= link_to("edit", edit_billboard_path(billboard.id)) %>
     -
-    <%= link_to("delete", billboard_path(song.id), method: :delete, data: {confirm: "Are you sure??"})%>
+    <%= link_to("delete", billboard_path(billboard.id), method: :delete, data: {confirm: "Are you sure??"})%>
   </p>
 <% end %>
 
