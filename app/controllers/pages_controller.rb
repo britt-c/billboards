@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @billboards = Billboard.all 
+    @billboards = Billboard.limit(5) 
   end
 
 end
