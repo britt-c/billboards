@@ -1,0 +1,14 @@
+<h1>All Billboards</h1>
+
+<% @billboards.each do |billboard| %>
+  <p>
+    <%= billboard.body %>
+    -
+    <%= link_to("edit", edit_billboard_path(song.id)) %>
+    -
+    <%= link_to("delete", billboard_path(song.id), method: :delete, data: {confirm: "Are you sure??"})%>
+  </p>
+<% end %>
+
+<nav class="bottomnav"><%= link_to("New_Billboard", new_billboard_path)%></nav>
+

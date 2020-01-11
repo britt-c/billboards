@@ -1,4 +1,4 @@
-class BilloardsController < ApplicationController
+class BillboardsController < ApplicationController
   
   def index
     @billboards = Billboard.all
@@ -12,7 +12,7 @@ class BilloardsController < ApplicationController
   end
   
   def create
-    @billboard = = Billboard.new(billboard_params)
+    @billboard = Billboard.new(billboard_params)
     if @billboard.save
       redirect_to(billboards_path)
     else

@@ -11,10 +11,15 @@
 
   <body>
 
-    <nav>
+    <nav class="appnav">
       <%= link_to("Home", root_path)%>
       <%= link_to("Songs", songs_path)%>
+      <%= link_to("Billboards", billboards_path)%>
+      <%= link_to("Artists", artists_path)%>
     </nav> 
     <%= yield %>
   </body>
+
 </html>
+
+      
