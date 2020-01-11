@@ -1,0 +1,10 @@
+<% @songs.each do |song| %>
+  <p>
+    <%= song.body %>
+    -
+    <%= link_to("edit", edit_song_path(song.id)) %>
+    -
+    <%= link_to("delete", song_path(song.id), method: :delete, data: {confirm: "Are you sure??"})%>
+  </p>
+<% end %>
+
