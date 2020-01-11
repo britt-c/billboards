@@ -1,0 +1,2 @@
+module BilloardsHelper
+end
