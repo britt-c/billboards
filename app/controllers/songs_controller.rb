@@ -4,6 +4,9 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
   
+  def show
+  end
+  
   def new
    @song = Song.new    
   end
