@@ -39,5 +39,10 @@ class BillboardsController < ApplicationController
     redirect_to(billboards_path)
   end
   
+  private
+
+  def billboard_params
+  params.require(:billboard).permit(:body)
+  end
 
 end
