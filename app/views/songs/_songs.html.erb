@@ -1,8 +1,10 @@
 <% songs.each do |song| %>
   <div class="song-card">
     <p>
-    <%= song.title %>
-    <%= song.genre %>
+    Title: <%= song.title %>
+    Genre: <%= song.genre %>
+    Release On: <%= song.released_on %>
+    Rating: <%= song.rating %>
   </div>
 <% end %>
 
