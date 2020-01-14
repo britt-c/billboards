@@ -1,17 +1,17 @@
 <h1>All Songs</h1>
-
-<% @songs.each do |song| %>
-  <p>
-     <%= song.title %>
-     <%= song.genre %>
-     <%= song.released_on%>
-     <%= song.rating %>
-    -
-    <%= link_to("edit", edit_song_path(song.id)) %>
-    -
-    <%= link_to("delete", song_path(song.id), method: :delete, data: {confirm: "Are you sure??"})%>
-  </p>
-<% end %>
-
+  <div>
+    <% @songs.each do |song| %>
+      <p>
+        <%= song.title %>
+        <%= song.genre %>
+        <%= song.released_on%>
+        <%= song.rating %>
+        -
+        <%= link_to("edit", edit_song_path(song.id)) %>
+        -
+        <%= link_to("delete", song_path(song.id), method: :delete, data: {confirm: "Are you sure??"})%>
+      </p>
+    <% end %>
+  </div>
 <nav class="bottomnav"><%= link_to("New_Song", new_song_path) %></nav>
 

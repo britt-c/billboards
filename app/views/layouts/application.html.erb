@@ -7,16 +7,14 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-
+  </head> 
     <nav class="appnav">
       <%= link_to("Home", root_path)%>
       <%= link_to("Songs", songs_path)%>
       <%= link_to("Billboards", billboards_path)%>
       <%= link_to("Artists", artists_path)%>
-    </nav> 
+    </nav>
+  <body>
     <%= yield %>
   </body>
 

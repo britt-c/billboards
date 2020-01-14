@@ -1,8 +1,14 @@
 body {
 	margin: 40px;
 	background-image: url("music.jpg");
-  background-repeat: no-repeat;
+	background-repeat: no-repeat;
   background-size: cover;
+}
+
+div {
+	background-color: transparent;
+	max-height: 470px;
+	overflow: auto;
 }
 
 .appnav {
@@ -41,5 +47,4 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
-
 
