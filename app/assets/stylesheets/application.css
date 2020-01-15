@@ -8,7 +8,12 @@ body {
 div {
 	background-color: transparent;
 	max-height: 470px;
+	min-height: 470px;
 	overflow: auto;
+}
+
+p {
+	word-spacing: -1px;
 }
 
 .appnav {

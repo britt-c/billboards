@@ -1,15 +1,16 @@
 <h1>All Billboards</h1>
 <div>
-<% @billboards.each do |billboard| %>
-  <p>
-  <%= billboard.title %>
-  <%= billboard.country %>
-    -
-    <%= link_to("edit", edit_billboard_path(billboard.id)) %>
-    -
-    <%= link_to("delete", billboard_path(billboard.id), method: :delete, data: {confirm: "Are you sure??"})%>
-  </p>
-<% end %>
+
+  <% @billboards.each do |billboard| %>
+    <p>
+    <%= billboard.title %>~
+    <%= billboard.country %>
+      -
+      <%= link_to("edit", edit_billboard_path(billboard.id)) %>
+      -
+      <%= link_to("delete", billboard_path(billboard.id), method: :delete, data: {confirm: "Are you sure??"})%>
+      </p>
+  <% end %>
 </div>
 <nav class="bottomnav"><%= link_to("New_Billboard", new_billboard_path)%></nav>
 
