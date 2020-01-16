@@ -8,8 +8,12 @@ before_action :authenticate_user!
   end
 
   def new
-   @artist = Artist.new
-  end
+    if current_user && current_user.admin? || current_user.artist?
+      @artist = Artist.new
+    else
+      redirect_to(artists_path)
+    end
+  end 
 
   def create
     @artist = Artist.new(artist_params)
@@ -21,7 +25,11 @@ before_action :authenticate_user!
   end
 
   def edit
-    @artist = Artist.find(params[:id])
+    if current_user && current_user.admin? ||  current_user.artist? 
+      @artist = Artist.find(params[:id])
+    else
+      redirect_to(artists_path)
+    end
   end
 
   def update
@@ -34,10 +42,14 @@ before_action :authenticate_user!
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
-    @artist.destroy
-    redirect_to(artists_path)
-  end
+    if current_user && current_user.artist? || current_user.admin?
+      @artist = Artist.find(params[:id])
+      @artist.destroy
+      redirect_to(artists_path)
+    else
+      redirect_to(artists_path)
+    end
+  end 
 
   private
 

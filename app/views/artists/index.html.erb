@@ -3,11 +3,15 @@
 <% @artists.each do |artist| %>
   <p>
     <%= artist.name %>
+    <% if current_user && current_user.admin? || current_user.artist? %>
     -
     <%= link_to("edit", edit_artist_path(artist.id)) %>
     -
     <%= link_to("delete", artist_path(artist.id), method: :delete, data: {confirm: "Are you sure?"})%>
+    <% end %>
   </p>
 <% end %>
 </div>
-<nav class="bottomnav"><%= link_to("New_Artist", new_artist_path)%></nav>
+<% if current_user && current_user.admin? || current_user.artist? %>
+  <nav class="bottomnav"><%= link_to("New_Artist", new_artist_path)%></nav>
+<% end %>

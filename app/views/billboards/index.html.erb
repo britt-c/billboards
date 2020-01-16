@@ -5,12 +5,16 @@
     <p>
     <%= billboard.title %>~
     <%= billboard.country %>
+    
+    <% if current_user && current_user.admin? %>
       -
       <%= link_to("edit", edit_billboard_path(billboard.id)) %>
       -
       <%= link_to("delete", billboard_path(billboard.id), method: :delete, data: {confirm: "Are you sure??"})%>
-      </p>
+    <% end %>
+   </p>
   <% end %>
 </div>
+<% if current_user && current_user.admin?%>
 <nav class="bottomnav"><%= link_to("New_Billboard", new_billboard_path)%></nav>
-
+<% end %>

@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :billboards
   resources :artists
   resources :songs
-
+  
+  namespace :admin do 
+    get "/", to: "dashboard#index"
+  end
 end

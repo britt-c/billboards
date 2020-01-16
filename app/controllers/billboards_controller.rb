@@ -8,7 +8,11 @@ before_action :authenticate_user!
   end
   
   def new
-   @billboard = Billboard.new    
+    if current_user && current_user.admin?
+      @billboard = Billboard.new    
+    else
+      redirect_to(billboards_path, alert: "You must be an admin to create a new billboard.")
+    end
   end
   
   def create
@@ -21,7 +25,11 @@ before_action :authenticate_user!
   end
   
   def edit
-    @billboard = Billboard.find(params[:id]) 
+    if current_user && current_user.admin?
+      @billboard = Billboard.find(params[:id]) 
+    else
+      redirect_to(billboards_path, alert: "You must be an admin to edit a billboard.")
+    end
   end
 
   def update 
@@ -34,9 +42,13 @@ before_action :authenticate_user!
   end
   
   def destroy
-    @billboard = Billboard.find(params[:id])
-    @billboard.destroy
-    redirect_to(billboards_path)
+    if current_user && current_user.admin?
+      @billboard = Billboard.find(params[:id])
+      @billboard.destroy
+      redirect_to(billboards_path)
+    else
+      redirect_to(billboards_path, alert: "You must be an admin to edit a billboard.")
+    end
   end
   
   private
